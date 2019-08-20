@@ -1,15 +1,22 @@
 #Python3
-import PyPDF2, sys
+#ARGUMENTS: Single PDF user wishes to split
+#OUTPUT: Each page of the input PDF is now in its own PDF named
+#        [input PDF's name]_[page number].pdf
 
-pdf1 = open(sys.argv[1], 'rb')
-in1 = PyPDF2.PdfFileReader(pdf1)
-num_out = in1.numPages
+import PyPDF2, sys
 
 #get pdf name without extension
 pdfName = sys.argv[1]
 extension_position = pdfName.find('.pdf')
+if(extension_position == -1):
+    print('Must input a PDF')
+    sys.exit()
 if(extension_position != -1):
     pdfName = pdfName[0:pdfName.find('.pdf')]
+
+pdf1 = open(sys.argv[1], 'rb')
+in1 = PyPDF2.PdfFileReader(pdf1)
+num_out = in1.numPages
 
 #array of out files and writer
 out_arr = [0] * num_out
