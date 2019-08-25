@@ -3,14 +3,13 @@
 #OUTPUT: Each page of the input PDF is now in its own PDF named
 #        [input PDF's name]_[page number].pdf
 
-import PyPDF2, sys
+import PyPDF2, os, sys
 
-#get pdf name without extension
+#Get pdf name without extension
 pdfName = sys.argv[1]
+
 extension_position = pdfName.find('.pdf')
-if(extension_position == -1):
-    print('Must input a PDF')
-    sys.exit()
+
 if(extension_position != -1):
     pdfName = pdfName[0:pdfName.find('.pdf')]
 
@@ -18,11 +17,11 @@ pdf1 = open(sys.argv[1], 'rb')
 in1 = PyPDF2.PdfFileReader(pdf1)
 num_out = in1.numPages
 
-#array of out files and writer
+#Array of out files and writer
 out_arr = [0] * num_out
 writer_arr = [0] * num_out
 
-#create new out file, get pg, write it to said file
+#Create new out file, get pg, write it to said file
 for i in range(num_out):
     out_arr[i] = open(pdfName + '_' + str(i) + '.pdf', 'wb')
     pg = in1.getPage(i)

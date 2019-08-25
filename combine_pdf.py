@@ -4,23 +4,26 @@
 #           PDFs user wishes to combine
 #OUTPUT:    one PDF with all pages from all PDFs
 
-import PyPDF2, sys, os
+import PyPDF2, os, sys
 
 #if first arg is a path, combine all PDFs in that folder
 #if first arg is not a path, assume all args are PDFs to combine
 name = sys.argv[1]
+if not name.endswith('/'):
+    name = name + '/'
 files = []
 extension_position = name.find('.pdf')
-if(extension_position == -1):   #if path
 
-    if(os.path.exists(sys.argv[1]) == False):
+if extension_position == -1:   #if path
+
+    if os.path.exists(name) == False:
         print("Invalid path. Need to enter an absolute path")
         sys.exit()
 
     for filename in os.listdir(name):
         #avoid output.pdf because that is the output file
         if filename.endswith('.pdf') and filename != 'output.pdf':
-            files.append(filename)
+            files.append(name + filename)
 
     files.sort(key=str.lower)
 
@@ -42,7 +45,7 @@ for i in range(len(in_arr)):
         pg = in_arr[i].getPage(pgNum)
         writer.addPage(pg)
 
-out = open('output.pdf', 'wb')
+out = open(name + 'output.pdf', 'wb')
 writer.write(out)
 out.close()
 for i in range(len(pdf_arr)):
