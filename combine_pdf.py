@@ -12,18 +12,23 @@ name = sys.argv[1]
 files = []
 extension_position = name.find('.pdf')
 if(extension_position == -1):   #if path
+
     if(os.path.exists(sys.argv[1]) == False):
         print("Invalid path. Need to enter an absolute path")
         sys.exit()
+
     for filename in os.listdir(name):
         #avoid output.pdf because that is the output file
         if filename.endswith('.pdf') and filename != 'output.pdf':
             files.append(filename)
+
     files.sort(key=str.lower)
+
 else:
-    files = [0] * (len(sys.argv)-1)
+
+    files = [0] * (len(sys.argv) - 1)
     for i in range(len(files)):
-        files[i] = sys.argv[i+1]
+        files[i] = sys.argv[i + 1]
 
 pdf_arr = [0] * (len(files))
 in_arr = [0] * (len(files))

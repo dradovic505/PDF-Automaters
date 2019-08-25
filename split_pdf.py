@@ -1,5 +1,5 @@
 #Python3
-#ARGUMENTS: Single PDF user wishes to split
+#ARGUMENTS: Name of the PDF user wishes to split
 #OUTPUT: Each page of the input PDF is now in its own PDF named
 #        [input PDF's name]_[page number].pdf
 
