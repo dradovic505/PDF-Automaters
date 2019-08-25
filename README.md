@@ -36,12 +36,12 @@ The output PDFs will contain one page each and will be named [input PDF's name]_
 
 Example 1:
 
-    python3 combine_pdf.py file1.pdf
+    python3 split_pdf.py file1.pdf
 
 In example 1, the output files will be stored in the current working directory.
 
 Example 2:
 
-    python3 combine_pdf.py /Users/Home/Desktop/My_Folder/file1.pdf
+    python3 split_pdf.py /Users/Home/Desktop/My_Folder/file1.pdf
 
 In example 2, the output files will be stored in My_Folder.
