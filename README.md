@@ -1,4 +1,4 @@
-#PDF Combiner:
+# PDF Combiner
 
 This program takes PDFs (no other file type is supported) and combines them all into one PDF.
 
@@ -22,7 +22,7 @@ Example 2:
     
 In example 2, the files will be appended in the order they are written in the command line and stored in the current working directory.
 
-#PDF Splitter:
+# PDF Splitter
 
 This program takes a single PDF (no other file type is supported) and splits it into separate PDFs, one PDF for each page.
 
