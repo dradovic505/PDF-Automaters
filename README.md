@@ -1,10 +1,30 @@
+# Image to PDF converter
+
+This program takes a list of absolute paths for images - or a an absolute path of a folder containing images - that will be convert the images to PDFs. Files that cannot be converted will be ignored.
+
+To run it:
+
+Install PyPDF2 using `pip install PyPDF2` and Pillow using `pip install Pillow`.
+Run the program in the command line.
+
+Example 1:
+
+        python3 combine_pdf.py /Users/Home/Desktop/My_Folder
+    
+Example 2:
+
+        python3 combine_pdf.py /Users/Home/Desktop/My_Folder/file1.pdf /Users/Home/Desktop/My_Folder/file2.pdf
+    
+In example 2, the files will be appended in the order they are written in the command line and stored in the current working directory.
+
+
 # PDF Combiner
 
 This program takes PDFs (no other file type is supported) and combines them all into one PDF.
 
 To run it:
 
-Install PyPDF2 using pip install PyPDF2.
+Install PyPDF2 using `pip install PyPDF2` and Pillow using `pip install Pillow`.
 Run the program in the command line. 
 The arguments can be either the absolute path of a folder from which you want all PDFs 
 in that folder to be cominbed into one, or it can the a list of the PDFs you want to combine within the current working
